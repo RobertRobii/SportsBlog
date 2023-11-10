@@ -1,0 +1,33 @@
+<h2 class="header">Inside Football: Exploring the Beautiful Game</h2>
+<% articles.forEach(function(article) { %>
+<div class="article">
+  <div class="article--left--side">
+    <img class="article--image" src="<%= article.image %>" alt="" />
+  </div>
+  <div class="article--right--side">
+    <div class="sport--author">
+      <p class="article--sport--type"><%= article.sportType %></p>
+      <p class="article--date">
+        <%= article.createdAt.toLocaleDateString("ro-RO") %>
+      </p>
+      <p class="article--author"><%= article.author %></p>
+    </div>
+    <h4 class="article--title"><%= article.title %></h4>
+    <p class="article--subject">
+      <% if (article.content.length > 400) { %> <%= article.content.substring(0,
+      400) + "..." %> <% } else { %> <%= article.content %> <% } %>
+    </p>
+    <a class="article--link" href="/post/<%= article._id %>">Read More</a>
+    <hr />
+    <div class="article--comments">
+      <p>
+        <span class="comments--number"><%= article.comments.length %></span>
+        <span class="comments--text">
+          <% if (article.comments.length === 1) { %> comment <% } else { %>
+          comments <% } %>
+        </span>
+      </p>
+    </div>
+  </div>
+</div>
+<% }) %>

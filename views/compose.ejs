@@ -1,0 +1,50 @@
+<h2 class="header">Craft Your Own Article</h2>
+<form action="/compose" method="post">
+  <label for="select--option" class="form-label">Select your topic:</label>
+  <select
+    class="form-select mb-3"
+    aria-label="Default select example"
+    id="select--option"
+    name="postOption"
+    required
+  >
+    <option value="Football">Football</option>
+    <option value="Tennis">Tennis</option>
+    <option value="Fitness">Fitness</option>
+  </select>
+  <div class="mb-3">
+    <label for="input--name" class="form-label">Author name:</label>
+    <input
+      type="text"
+      class="form-control"
+      id="input--name"
+      name="postName"
+      required
+    />
+  </div>
+  <div class="mb-3">
+    <label for="input--title" class="form-label">Article title:</label>
+    <input
+      type="text"
+      class="form-control"
+      id="input--title"
+      name="postTitle"
+      required
+    />
+  </div>
+  <div class="mb-3">
+    <label for="article--subject" class="form-label"
+      >Write your article here:</label
+    >
+    <textarea
+      class="form-control"
+      id="article--subject"
+      rows="10"
+      name="postBody"
+      required
+    ></textarea>
+  </div>
+  <button id="publish--article--btn" class="publish--article--btn">
+    Publish
+  </button>
+</form>

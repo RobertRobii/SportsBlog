@@ -1,0 +1,81 @@
+<div id="success--message" class="notification">
+  <div class="notification-subject">
+    <i class="fas fa-solid fa-check check"></i>
+
+    <div class="message">
+      <span class="text text-1">Success</span>
+      <span class="text text-2">Your changes has been saved</span>
+    </div>
+  </div>
+  <i class="fa-solid fa-xmark close--btn"></i>
+</div>
+
+<div class="article">
+  <div class="article--left--side">
+    <img class="article--image" src="<%= article.image %>" alt="" />
+  </div>
+  <div class="article--right--side">
+    <div class="sport--author">
+      <p class="article--sport--type"><%= article.sportType %></p>
+      <p class="article--date">
+        <%= article.createdAt.toLocaleDateString("ro-RO") %>
+      </p>
+      <p class="article--author"><%= article.author %></p>
+    </div>
+    <h4 class="article--title"><%= article.title %></h4>
+    <p class="article--subject"><%= article.content %></p>
+    <a class="article--edit--link" href="/edit/post/<%= article._id %>">Edit</a>
+    <hr />
+    <div class="article--comments">
+      <p>
+        <span class="comments--number"><%= article.comments.length %></span>
+        <span class="comments--text">
+          <% if (article.comments.length === 1) { %> comment <% } else { %>
+          comments <% } %>
+        </span>
+      </p>
+    </div>
+  </div>
+</div>
+
+<h2 class="leave--comment">Leave your thoughts here!</h2>
+
+<form action="/post/<%= article._id %>" method="post">
+  <label for="comment--name" class="form-label">Enter your name:</label>
+  <input
+    class="form-control comment--user"
+    type="text"
+    name="commentName"
+    id="comment--name"
+    required
+  />
+  <label for="comment--text" class="form-label">Write your comment here:</label>
+  <div class="comment--div">
+    <textarea
+      class="form-control comment--input"
+      rows="2"
+      id="comment--text"
+      name="commentText"
+      required
+    ></textarea>
+    <button class="comment--button">Publish</button>
+</form>
+
+    <h2 class="leave--comment">Comments:</h2>
+    <div class="comments">
+      <% article.comments.forEach(comment => { %>
+      <div class="comment--row">
+        <div class="comment--display">
+          <div class="name--subject">
+            <span class="comment--username"><%= comment.username %>:</span
+            ><span class="comment--subject"><%= comment.content %></span>
+          </div>
+          <form id="comment--delete">
+            <input id="hidden--input--comment--id" hidden value="<%= comment._id %>" />
+            <button class="comment--remove--btn">Remove</button>
+          </form>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+  </div>

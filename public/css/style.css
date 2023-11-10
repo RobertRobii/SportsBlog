@@ -1,0 +1,454 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+.notification {
+  position: absolute;
+  top: 25px;
+  right: 30px;
+  border-radius: 12px;
+  background: #fff;
+  padding: 20px 35px 20px 25px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  border-left: 6px solid #019267;
+  overflow: hidden;
+  transform: translateX(calc(100% + 30px));
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.35);
+}
+
+.notification.on {
+  transform: translateX(0%);
+}
+
+.notification .notification-subject {
+  display: flex;
+  align-items: center;
+}
+
+.notification-subject .check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 35px;
+  width: 35px;
+  background-color: #019267;
+  color: #fff;
+  font-size: 20px;
+  border-radius: 50%;
+}
+
+.notification-subject .message {
+  display: flex;
+  flex-direction: column;
+  margin: 0 20px;
+}
+
+.message .text {
+  font-size: 20px;
+  font-weight: 400;
+  color: #666666;
+}
+
+.message .text.text-1 {
+  font-weight: 600;
+  color: #333;
+}
+
+.notification .close--btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  padding: 5px;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.notification .close--btn:hover {
+  opacity: 1;
+}
+
+.notification.on ~ button {
+  pointer-events: none;
+}
+
+/* Navbar  */
+
+.navbar {
+  font-size: 1rem;
+  letter-spacing: 5px;
+}
+
+.navbar-nav li {
+  margin: 0 5px;
+}
+
+.navbar-nav li a {
+  color: #3c4048;
+}
+
+.navbar-nav li a:hover {
+  color: #019267 !important;
+}
+
+.active {
+  color: #019267 !important;
+}
+
+/* index page  */
+
+.header {
+  font-family: "Poppins", sans-serif;
+  margin: 50px 0;
+  color: #3c4048;
+}
+
+.article {
+  display: flex;
+  padding: 20px 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.article--title {
+  color: #3c4048;
+}
+
+.article--link {
+  text-decoration: none;
+  color: #019267;
+}
+
+.article--link:hover {
+  text-decoration: underline;
+}
+
+.article--image {
+  width: 400px;
+  height: 280px;
+  border-radius: 10px;
+}
+
+.article--left--side {
+  padding-right: 20px;
+}
+
+.article--right--side {
+  width: 100%;
+}
+
+.sport--author {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.article--date {
+  background: #f1efef;
+  border-radius: 7px;
+  text-align: center;
+  padding: 0 10px;
+}
+
+.article--sport--type {
+  color: white;
+  background-color: #019267;
+  border-radius: 7px;
+  text-align: center;
+  padding: 0 10px;
+}
+
+.article--author {
+  color: white;
+  background-color: #ffa33c;
+  border-radius: 7px;
+  text-align: center;
+  padding: 0 10px;
+}
+
+.article--edit--link {
+  background-color: #019267;
+  margin-right: 10px;
+  outline: none;
+  border: none;
+  border-radius: 7px;
+  padding: 5px 20px;
+  margin-bottom: 5px;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+}
+
+.article--edit--link:hover {
+  background: #ffa33c;
+  color: white;
+  transition: 0.5s ease;
+}
+
+.article--comments {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.3rem;
+}
+
+.heart-icon {
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #019267;
+}
+
+/* Comments section  */
+
+.leave--comment {
+  margin-bottom: 20px;
+  padding-left: 10px;
+  color: #3c4048;
+  font-family: "Poppins", sans-serif;
+}
+
+.comment-error {
+  color: #bb2525;
+  text-decoration: underline;
+  padding-left: 10px;
+  margin-top: 10px;
+  font-family: "Poppins", sans-serif;
+}
+
+.comment--user {
+  width: 300px !important;
+  border: none;
+  border-bottom: 1px solid;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  margin-bottom: 10px;
+  font-family: "Poppins", sans-serif;
+}
+
+.comment--user:focus {
+  outline: none;
+}
+
+.comment--input {
+  width: 100%;
+  border: none;
+  padding-right: 10px;
+  margin-right: 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+.comment--input:focus {
+  outline: none;
+}
+
+.comment--button {
+  margin-right: 10px;
+  height: 38px;
+  outline: none;
+  border: none;
+  border-radius: 7px;
+  padding: 5px 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 90px;
+  color: #3c4048;
+  font-family: "Poppins", sans-serif;
+}
+
+.comment--button:hover {
+  background: #019267;
+  color: white;
+  transition: 0.5s ease;
+}
+
+.comment--row {
+  margin: 10px 0;
+  background-color: #f1efef;
+  border-radius: 10px;
+  padding: 5px 10px;
+  font-family: "Poppins", sans-serif;
+}
+
+.comment--display {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.name--subject {
+  display: flex;
+  padding-right: 20px;
+}
+
+.comment--edit--btn {
+  height: 35px;
+  outline: none;
+  border: none;
+  border-radius: 7px;
+  padding: 5px 10px;
+  background: #ffa33c;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  margin-left: auto;
+  margin-right: 10px;
+}
+
+.comment--remove--btn {
+  height: 35px;
+  outline: none;
+  border: none;
+  border-radius: 7px;
+  padding: 5px 10px;
+  background: #ffa33c;
+  color: white;
+  font-family: "Poppins", sans-serif;
+}
+
+.comment--edit--btn:hover {
+  background: #019267;
+  color: white;
+  transition: 0.5s ease;
+}
+
+.comment--remove--btn:hover {
+  background: #bb2525;
+  color: white;
+  transition: 0.5s ease;
+}
+
+.comment--username {
+  font-weight: bold;
+  color: #019267;
+}
+
+.comment--subject {
+  margin-left: 10px;
+}
+
+/* compose page  */
+
+.form-label {
+  padding-left: 12px;
+  color: #019267 !important;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #019267 !important;
+  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25) !important;
+}
+
+.publish--article--btn {
+  margin-right: 10px;
+  outline: none;
+  border: none;
+  border-radius: 7px;
+  padding: 5px 10px;
+  margin-bottom: 5px;
+  width: 90px;
+  color: #3c4048;
+  font-family: "Poppins", sans-serif;
+}
+
+.publish--article--btn:hover {
+  background: #019267;
+  color: white;
+  transition: 0.5s ease;
+}
+
+.delete--btn:hover {
+  background: #bb2525;
+}
+
+/* Footer  */
+
+.footer {
+  color: #019267;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2rem;
+  margin: 20px 0;
+}
+
+/* responsive  */
+
+@media (min-width: 750px) and (max-width: 990px) {
+  .container {
+    width: 600px !important;
+  }
+
+  .article {
+    display: block;
+  }
+
+  .article--right--side {
+    padding: 20px 0;
+  }
+
+  .article--left--side {
+    padding-right: 0;
+  }
+
+  .sport--author {
+    width: 100%;
+  }
+
+  .article--image {
+    width: 100%;
+    height: 280px;
+    border-radius: 10px;
+  }
+}
+
+/* phone size  */
+
+@media (max-width: 750px) {
+  .notification {
+    padding: 10px 25px 10px 15px;
+  }
+
+  .message .text {
+    font-size: 1rem;
+  }
+
+  .article {
+    display: block;
+  }
+
+  .article--right--side {
+    padding: 20px 0;
+  }
+
+  .article--left--side {
+    padding-right: 0;
+  }
+
+  .sport--author {
+    width: 100%;
+  }
+
+  .article--image {
+    width: 100%;
+    height: 280px;
+    border-radius: 10px;
+  }
+
+  .article--comments {
+    padding-left: 10px;
+  }
+
+  .comment--user {
+    width: 200px !important;
+  }
+
+  .footer {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+  }
+}

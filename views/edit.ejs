@@ -1,0 +1,57 @@
+
+
+<h2 class="header">Edit Your Own Article</h2>
+<form action="/edit/post/<%= article._id %>" method="post">
+  <label for="select--option" class="form-label">Select your topic:</label>
+  <select
+    class="form-select mb-3"
+    aria-label="Default select example"
+    id="select--option"
+    name="postOption"
+    required
+  >
+    <option value="Football" <% if (article.sportType === 'Football') { %>selected<% } %>>Football</option>
+    <option value="Tennis" <% if (article.sportType === 'Tennis') { %>selected<% } %>>Tennis</option>
+    <option value="Fitness" <% if (article.sportType === 'Fitness') { %>selected<% } %>>Fitness</option>
+  </select>
+  <div class="mb-3">
+    <label for="input--name" class="form-label">Author name:</label>
+    <input
+      type="text"
+      class="form-control"
+      id="input--name"
+      name="postName"
+      value="<%= article.author %>"
+      required
+    />
+  </div>
+  <div class="mb-3">
+    <label for="input--title" class="form-label">Article title:</label>
+    <input
+      type="text"
+      class="form-control"
+      id="input--title"
+      name="postTitle"
+      value="<%= article.title %>"
+      required
+    />
+  </div>
+  <div class="mb-3">
+    <label for="article--subject" class="form-label"
+      >Write your article here:</label
+    >
+    <textarea
+      class="form-control"
+      id="article--subject"
+      rows="10"
+      name="postBody"
+      required
+    ><%= article.content %></textarea>
+  </div>
+  <button class="publish--article--btn">Update</button>
+</form>
+<form id="article--delete">
+  <input id="hidden--input" hidden value="<%= article._id %>" >
+  <button class="publish--article--btn delete--btn">Delete</button>
+</form>
+
