@@ -5,7 +5,7 @@ This is nothing but a simple blog for sports. The articles are various types of 
 ## Getting Started
 
 1. Create a ".env" file in the root directory
-2. Add the following variables to the ".env" file: MONGODB_URI="your Mongo URI", PORT=your port(e.g. 3000)
+2. Add the following variables to the ".env" file: MONGODB_URI="your Mongo URI/blog" (DO NOT forget to add the "/blog" to the end of the string), PORT=your port(e.g. 3000)
 3. Run "npm install" to install the dependencies
 4. Run "npm run dev" to start the server
 5. Navigate to "localhost:your port" to view the app!
