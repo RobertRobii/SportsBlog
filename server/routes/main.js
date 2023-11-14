@@ -213,4 +213,34 @@ router.put("/post/:id", async (req, res) => {
   }
 });
 
+function insertArticleData() {
+  Article.insertMany([
+    {
+      image: "/images/football/football-post-img.jpg",
+      sportType: "Football",
+      author: "Robert Raiovici",
+      title: "News and significant events from the world of football",
+      content:
+        "Discover the latest updates and significant happenings from the dynamic realm of football worldwide. From major transfer announcements and managerial changes to pivotal match results and noteworthy achievements, stay informed about the pulse of the global football community. Delve into exclusive insights and captivating stories that capture the essence of the sport, highlighting the triumphs, controversies, and captivating narratives that shape the ever-evolving landscape of the beautiful game.",
+    },
+    {
+      image: "/images/tennis/tennis-post-img.jpg",
+      sportType: "Tennis",
+      author: "Simona Halep",
+      title: "News about top tennis tournaments and players' performances",
+      content:
+        "Stay updated with the latest news on the foremost tennis tournaments and the outstanding performances of the players. From the intense showdowns at Grand Slam events to the thrilling matches at prestigious ATP and WTA tournaments, the coverage includes insightful analyses of players' strategies, notable victories, and remarkable comebacks. Delve into the world of tennis as breaking news and in-depth reports shed light on the triumphs and challenges faced by the top-ranked athletes, showcasing their exceptional skills and unwavering determination on the court.",
+    },
+    {
+      image: "/images/fitness/fitness-post-img.jpg",
+      sportType: "Fitness",
+      author: "Denisa Dragan",
+      title: "Tips and guides for beginners on the correct training methods",
+      content:
+        "For beginners seeking to embark on a fitness journey, having access to effective training methods is paramount. With a myriad of tips and comprehensive guides available, individuals can learn the correct techniques for various exercises, ensuring optimal results and minimizing the risk of injuries. From emphasizing proper form in weightlifting to outlining structured cardio routines, these resources provide invaluable support for newcomers navigating the world of fitness. By adhering to these tips and incorporating the suggested training methodologies into their routines, beginners can establish a strong foundation for achieving their desired fitness goals and cultivating a sustainable, healthy lifestyle.",
+    },
+  ]);
+}
+insertArticleData();
+
 module.exports = router;
